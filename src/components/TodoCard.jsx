@@ -1,7 +1,7 @@
 import React from "react";
 
 const TodoCard = (props) => {
-  const { children, handleDeleteTodo , index } = props;
+  const { children, handleDeleteTodo , index, handleEditTodo } = props;
   return (
     <li li className="todoItem">
       {children}
@@ -9,7 +9,7 @@ const TodoCard = (props) => {
         {" "}
         <button >
           {" "}
-          <i className="fa-solid fa-pen-to-square"></i>
+          <i onClick={() => handleEditTodo(index)} className="fa-solid fa-pen-to-square"></i>
         </button>
         <button>
           {" "}

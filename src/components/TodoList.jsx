@@ -3,7 +3,7 @@ import TodoCard from "./TodoCard";
 
 const TodoList = (props) => {
 const {todos} = props
-  return (
+  return ( 
     <ul className="main">
       {todos.map((todo, todoIndex) => {
         return (

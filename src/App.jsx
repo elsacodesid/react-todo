@@ -8,6 +8,7 @@ function App() {
     "Eat more fruits and vegies",
     "Pick up the kids from school",
   ]);
+  const [todoValue, setTodoValue] = useState("");
   function handleAddTodos(newTodo) {
     const newTodoList = [...todos, newTodo];
     setTodos(newTodoList);
@@ -20,12 +21,14 @@ function App() {
 
   }
   function handleEditTodo(index){
-
+    const valueToBeEdited = todos[index]
+    setTodoValue(valueToBeEdited)
+    handleDeleteTodo(index)
   }
   return (
     <>
-      <TodoInput handleAddTodos={handleAddTodos} />
-      <TodoList todos={todos} handleDeleteTodo={handleDeleteTodo}/>
+      <TodoInput todoValue={todoValue} setTodoValue={setTodoValue} handleAddTodos={handleAddTodos} />
+      <TodoList handleEditTodo={handleEditTodo} todos={todos} handleDeleteTodo={handleDeleteTodo}/>
     </>
   );
 }
